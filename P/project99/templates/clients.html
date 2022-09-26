@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <style>
+        td{
+            border:1px solid gray;
+            padding: 20px;
+        }
+        thead{
+            font-size: large;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+<h1>clients details</h1>
+
+
+    <table>
+        <thead>
+            <tr>
+                <td> id </td>
+                <td> name </td>
+                <td> age </td>
+                <td> gender </td>
+                <td> wbc </td>
+                <td> neut </td>
+                <td> lymph </td>
+                <td> rbc </td>
+                <td> hct </td>
+                <td> urea </td>
+                <td> hb </td>
+                <td> iron </td>
+                <td> hdl </td>
+                <td> medical condition </td>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in clients %}
+            <tr>
+                
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.age}}</td>
+                <td>{{c.g}}</td>
+                <td>{{c.q1}}</td>
+                <td>{{c.q2}}</td>
+                <td>{{c.q3}}</td>
+                <td>{{c.q4}}</td>
+                <td>{{c.q5}}</td>
+                <td>{{c.q6}}</td>
+                <td>{{c.q7}}</td>
+                <td>{{c.q8}}</td>
+                <td>{{c.q9}}</td>
+                <td>{{c.mc}}</td>
+
+
+            </tr>
+            {% endfor %}     
+        </tbody>
+    </table>
+</body>
+</html>
+
+

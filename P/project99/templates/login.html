@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;background-color:rgb(204, 199, 195) ;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+.container img{
+  width: 100%;
+  border-radius: 20px 0 20px 0;
+
+  
+}
+
+.container {
+  background-color: rgb(167, 245, 245);
+  width: 30%;
+  margin: 0 auto;
+  padding: 16px;
+  margin-top: 30px;
+  border:1px solid gray;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px black;
+  transition: 0.2s all ease-out;
+}
+
+.container:hover{
+  transform: scale(1.15);
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+.form{
+  border:1px solid white;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+
+
+<form class= "form" action="." method="post">
+  {% csrf_token %}
+
+  <div class="container">
+    <div style="margin: 0 auto;">
+      <image src="https://www.bethesdahealth.org/wp-content/uploads/2017/11/iStock-177732003.jpg" alt=""></image>
+    </div>
+    <h1>Login as a doctor</h1>
+    <label for="id"><b>ID</b></label>
+    <input type="text" placeholder="Enter id" maxlength=9 name="id" required>
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" minlength=6 maxlength=8 name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" minlength=8 maxlength=10 name="password" required>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert" >
+      {{ message }}
+    </div> 
+    {% endfor %}
+    {% endif %}
+    <button type="submit">Login</button>
+
+  </div>
+
+
+</form>
+
+</body>
+</html>
